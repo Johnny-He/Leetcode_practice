@@ -1,0 +1,11 @@
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.csprojResolveAssemblyReference.cache
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.csproj.CoreCompileInputs.cache
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.AssemblyInfoInputs.cache
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.AssemblyInfo.cs
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.deps.json
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.runtimeconfig.json
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.runtimeconfig.dev.json
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.dll
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.pdb
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.dll
+C:\Users\何信鋕\source\repos\Leetcode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.pdb
