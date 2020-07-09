@@ -9,3 +9,15 @@ C:\Users\何信鋕\source\repos\Leetcode\Leetcode\bin\Debug\netcoreapp2.0\Leetco
 C:\Users\何信鋕\source\repos\Leetcode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.pdb
 C:\Users\何信鋕\source\repos\Leetcode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.dll
 C:\Users\何信鋕\source\repos\Leetcode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.pdb
+C:\LeetCode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.dll
+C:\LeetCode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.pdb
+C:\LeetCode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.deps.json
+C:\LeetCode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.runtimeconfig.json
+C:\LeetCode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.runtimeconfig.dev.json
+C:\LeetCode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.dll
+C:\LeetCode\Leetcode\bin\Debug\netcoreapp2.0\Leetcode.pdb
+C:\LeetCode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.csproj.CoreCompileInputs.cache
+C:\LeetCode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.AssemblyInfoInputs.cache
+C:\LeetCode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.AssemblyInfo.cs
+C:\LeetCode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.genruntimeconfig.cache
+C:\LeetCode\Leetcode\obj\Debug\netcoreapp2.0\Leetcode.csprojAssemblyReference.cache
