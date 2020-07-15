@@ -6,25 +6,32 @@ namespace LeetCodeTest
     [TestFixture]
     public class LeetcodeTest19
     {
+        private Leetcode19 _leetCode19;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _leetCode19 = new Leetcode19();
+        }
+
         [Test]
         public void remove_Nth_node_from_end_of_list()
         {
-            var leetCode19 = new Leetcode19();
-            var headNode = SetUpListNode();
             var oneListNode = SetUpOneListNode();
 
-            var target = 2;
             DisplayNode(oneListNode, 1);
             Console.WriteLine("=========================");
-            //var removeNthFromEnd = leetCode19.RemoveNthFromFirst(headNode, 2);
-            var removeNthFromEnd = leetCode19.RemoveNthFromEnd(oneListNode, 1);
+            var removeNthFromEnd = _leetCode19.RemoveNthFromEnd(oneListNode, 1);
             DisplayNode(removeNthFromEnd, 1);
         }
 
         [Test]
-        public void METHOD()
+        public void remove_2th_node_from_end_of_two_list()
         {
-            
+            var headNode = SetUpTwoListNode();
+            DisplayNode(headNode,1);
+            var removeNthFromEnd = _leetCode19.RemoveNthFromEnd(headNode, 2);
+            DisplayNode(removeNthFromEnd, 1);
         }
 
         private ListNode SetUpTwoListNode()
@@ -95,31 +102,34 @@ namespace LeetCodeTest
 
     public class Leetcode19
     {
-        public void RemoveNthFromFirst(ListNode head, int n, int target)
+        public ListNode RemoveNthFromFirst(ListNode head, int n, int target)
         {
             if (target == n)
             {
-                head.val = 100;
-                head = null;
+                return head.next;
             }
             if (n == target - 1)
             {
                 head.next = head.next.next;
+                return head;
             }
-            else if (n != target)
+
+            if (n != target)
             {
                 RemoveNthFromFirst(head.next, n + 1, target);
             }
+
+            return head;
         }
 
         public ListNode RemoveNthFromEnd(ListNode head, int n)
         {
             var nodeCount = GetNodeCount(head, 1);
             var numFromFirst = nodeCount - n + 1;
-            Console.WriteLine($"nodeCount =  {nodeCount} ,numFromFirst = {numFromFirst}");
-            RemoveNthFromFirst(head, 1, numFromFirst);
+            Console.WriteLine($"numFromFirst = {numFromFirst}");
+            var removeNthFromFirst = RemoveNthFromFirst(head, 1, numFromFirst);
 
-            return head;
+            return removeNthFromFirst;
         }
 
         private int GetNodeCount(ListNode head, int n)

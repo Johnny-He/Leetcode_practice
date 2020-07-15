@@ -5,12 +5,12 @@ namespace LeetCodeTest
 {
     public class Leetcode1Test
     {
-        private Leetcode1 _leetcode1;
+        private Leetcode123 _leetcode1;
 
         [Test]
         public void two_sum()
         {
-            _leetcode1 = new Leetcode1();
+            _leetcode1 = new Leetcode123();
             var sum = 9;
             var actual = _leetcode1.TwoSum(new List<int>() { 2, 7, 11, 15 }.ToArray(), sum);
             var expected = new List<int>() { 0, 1 };
@@ -19,7 +19,7 @@ namespace LeetCodeTest
         }
     }
 
-    public class Leetcode1
+    public class Leetcode123
     {
         public int[] TwoSum(int[] nums, int target)
         {
