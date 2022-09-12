@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Castle.Core.Internal;
 using NUnit.Framework;
 
 namespace LeetCodeTest
@@ -23,6 +25,7 @@ namespace LeetCodeTest
     {
         public int[] TwoSum(int[] nums, int target)
         {
+            // var find = Array.index();
             var answerList = new List<int>();
             for (int i = 0; i < nums.Length; i++)
             {
