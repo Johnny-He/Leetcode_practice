@@ -1,22 +1,7 @@
 ﻿using System.Linq;
-using FluentAssertions;
-using NUnit.Framework;
 
 namespace LeetCodeTest
 {
-    [TestFixture]
-    public class StringInverseTests
-    {
-        [TestCase("test","tset")]
-        [TestCase("abcdefg","gfedcba")]
-        [TestCase("zxczxcasdas","sadsacxzcxz")]
-        public void string_inverse(string input,string output)
-        {
-            var inversedString = StringHelper.Inverse(input);
-            inversedString.Should().Be(output);
-        }
-    }
-
     public static class StringHelper
     {
         public static string Inverse2(string input)

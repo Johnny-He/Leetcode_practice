@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Mbk8V0TlbZgPeiBDqzcCyR/D3AvrW2v0f4L4mI9t5kmGg37cNoCl+qUxveKDWPqZ3n5Sua7bXjxayU887UyX7g==",
+  "dgSpecHash": "fBCxM+5rUkdjGhGzzO/OZkV5icH0cmEUI6x7Tn42hc+r9DDZdYPVx6prBG8z0Ixt/vrUKG2WPy/ciTJ4jLhsBg==",
   "success": true,
   "projectFilePath": "C:\\LeetCode\\LeetCodeTest\\LeetCodeTest.csproj",
   "expectedPackageFiles": [
@@ -74,5 +74,12 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\johnny.he27\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.coreop.net/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }

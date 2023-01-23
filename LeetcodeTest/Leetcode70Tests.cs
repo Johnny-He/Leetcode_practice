@@ -32,7 +32,7 @@ namespace LeetCodeTest
                 return 1;
             }
 
-            ClimbStairs(n - 1);
+            return ClimbStairs(n - 1);
         }
     }
 }

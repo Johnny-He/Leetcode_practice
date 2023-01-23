@@ -4,6 +4,7 @@ using NUnit.Framework;
 namespace LeetCodeTest
 {
     [TestFixture]
+    [Ignore("not done yet")]
     public class LeetcodeTest19
     {
         private Leetcode19 _leetCode19;

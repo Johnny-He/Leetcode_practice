@@ -28,16 +28,6 @@ namespace LeetCodeTest
             var averageString = new StringAverage().AverageString(input);
             Assert.AreEqual(averageString, expected);
         }
-
-        [Test]
-        public void test()
-        {
-            var customers = new List<Customer>();
-            var customer = customers.Find(x => x.custId == 1);
-            Console.WriteLine(customer.custId);
-            Assert.AreEqual(1,1);
-        }
-
     }
 
     public class StringAverage
