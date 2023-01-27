@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lpyzu2uzNjnDn2hLhlPuOLkHvDo5W0kbDytcK6PxNTfM++jRPgSpL6ddRBiovsliC5IZMBs8bKd6HwEAJdL3Vg==",
+  "dgSpecHash": "oGaOgxd7LwF0c2OdAa3aVdrp+WH0nC2GSIg/3uU9W088muAFQgJmn52heOUkwcIpOnoFsDFxrAm6o4f0RE4TSw==",
   "success": true,
-  "projectFilePath": "C:\\LeetCode\\LeetCode\\LeetCode.csproj",
+  "projectFilePath": "C:\\LeetCode\\Leetcode\\Leetcode.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\johnny.he27\\.nuget\\packages\\microsoft.netcore.app\\2.0.0\\microsoft.netcore.app.2.0.0.nupkg.sha512",
     "C:\\Users\\johnny.he27\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.0.0\\microsoft.netcore.dotnetapphost.2.0.0.nupkg.sha512",

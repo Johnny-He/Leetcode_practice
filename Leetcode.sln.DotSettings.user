@@ -12,10 +12,10 @@
     &lt;/Test&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=74aeae5e_002Ddca7_002D4b32_002D83fd_002D6be9dcf89a00/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Pow" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=74aeae5e_002Ddca7_002D4b32_002D83fd_002D6be9dcf89a00/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Pow" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d45ff2c4_002Dfc0b_002D43c3_002Da673_002D2b6d5331208d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="string_inverse" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d45ff2c4_002Dfc0b_002D43c3_002Da673_002D2b6d5331208d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="string_inverse" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark4/@KeyIndexDefined">True</s:Boolean>

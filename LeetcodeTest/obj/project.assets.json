@@ -5039,11 +5039,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\LeetCode\\LeetCodeTest\\LeetCodeTest.csproj",
-      "projectName": "LeetCodeTest",
-      "projectPath": "C:\\LeetCode\\LeetCodeTest\\LeetCodeTest.csproj",
+      "projectUniqueName": "C:\\LeetCode\\LeetcodeTest\\LeetcodeTest.csproj",
+      "projectName": "LeetcodeTest",
+      "projectPath": "C:\\LeetCode\\LeetcodeTest\\LeetcodeTest.csproj",
       "packagesPath": "C:\\Users\\johnny.he27\\.nuget\\packages\\",
-      "outputPath": "C:\\LeetCode\\LeetCodeTest\\obj\\",
+      "outputPath": "C:\\LeetCode\\LeetcodeTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
