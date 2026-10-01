@@ -1,48 +1,98 @@
 ﻿using System.Collections;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCodeTest;
 
 [TestFixture]
-public class LeetCode105Test
+public class LeetCode238Test
 {
     [Test]
-    public void test()
+    public void Test()
     {
-        var leetCode105 = new LeetCode105();
+        var leetCode105 = new LeetCode238();
 
-        // var nthUglyNumber = leetCode105.NthUglyNumber(137);
-        // nthUglyNumber.Should().Be(4096);
+        var productExceptSelf = leetCode105.ProductExceptSelf([1, 2, 3, 4]);
+        productExceptSelf.Should().BeEquivalentTo([24, 12, 8, 6]);
     }
 }
 
-public class LeetCode105
+public class LeetCode238
 {
-    // Input: preorder =[3,9,20,15,7],
-    //        inorder = [9,3,15,20,7]
-    // Output: [3,9,20,null,null,15,7]
-    public TreeNode BuildTree(int[] preorder, int[] inorder)
+    public int[] ProductExceptSelf(int[] nums)
     {
-        var hashtable = new Hashtable();
-        for (var i = 0; i < inorder.Length; i++) hashtable.Add(inorder[i], i);
+        var lastNumber = 1;
+        var outputs = new int[nums.Length];
+        for (var i = nums.Length - 1; i >= 0; i--)
+        {
+            outputs[i] = lastNumber * nums[i];
+            lastNumber = outputs[i];
+        }
 
-        return dfs(preorder, hashtable, 0, preorder.Length - 1, 0, inorder.Length - 1);
+        lastNumber = 1;
+        for (var i = 0; i < nums.Length; i++)
+        {
+            if (i == 0)
+            {
+                outputs[i] = outputs[i + 1];
+            }
+            else if (i == nums.Length - 1)
+            {
+                outputs[i] = lastNumber;
+            }
+            else
+            {
+                outputs[i] = lastNumber * outputs[i + 1];
+            }
+
+            lastNumber *= nums[i];
+        }
+
+        return outputs;
     }
 
-    private TreeNode dfs(int[] preorder, IDictionary inorderLookup, int preorderLeft, int preorderRight,
-        int inoderLeft,
-        int inorderRight)
+    public int[] ProductExceptSelf2(int[] nums)
     {
-        if (inoderLeft > inorderRight) return null;
+        var leftProducts = new int[nums.Length];
+        var lastNumber = 1;
+        for (var i = 0; i < nums.Length; i++)
+        {
+            leftProducts[i] = lastNumber * nums[i];
+            lastNumber = leftProducts[i];
+        }
 
-        var root = new TreeNode(preorder[preorderLeft]);
-        var rootPosition = (int)inorderLookup[root.val];
-        var leftSubtreeLength = rootPosition - inoderLeft;
+        var rightProduct = new int[nums.Length];
+        lastNumber = 1;
+        for (var i = nums.Length - 1; i >= 0; i--)
+        {
+            rightProduct[i] = lastNumber * nums[i];
+            lastNumber = rightProduct[i];
+        }
 
-        root.left = dfs(preorder, inorderLookup, preorderLeft + 1, preorderLeft + leftSubtreeLength, inoderLeft,
-            rootPosition - 1);
-        root.right = dfs(preorder, inorderLookup, preorderLeft + leftSubtreeLength + 1, preorderRight,
-            rootPosition + 1, inorderRight);
-        return root;
+        var outputs = new int[nums.Length];
+        //1,2,3,4
+        //24,12,8,6
+
+        //left:  1,2,6,24
+        //right: 24,24,12,4
+        for (var i = 0; i < nums.Length; i++)
+        {
+            if (i == 0)
+            {
+                outputs[i] = rightProduct[i + 1];
+            }
+            else if (i == nums.Length - 1)
+            {
+                outputs[i] = leftProducts[i - 1];
+            }
+            else
+            {
+                outputs[i] = leftProducts[i - 1] * rightProduct[i + 1];
+            }
+        }
+
+        return outputs;
     }
 }

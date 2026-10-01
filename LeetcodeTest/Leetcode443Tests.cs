@@ -1,48 +1,80 @@
-﻿using System;
-using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCodeTest;
 
 [TestFixture]
-public class LeetCode334Test
+public class LeetCode443Test
 {
     [Test]
     public void Test()
     {
-        var leetCode105 = new LeetCode334();
-        var increasingTriplet = leetCode105.IncreasingTriplet([1, 2, 3, 4, 5]);
-        increasingTriplet.Should().BeTrue();
+        var leetCode443 = new LeetCode443();
+        char[] chars = ['a', 'a', 'b', 'b', 'c', 'c', 'c'];
+        // char[] chars = ['a', 'b', 'c'];
+        var output = leetCode443.Compress(chars);
+        // chars.Should().BeEquivalentTo(['a','b','c']);
+        chars.Should().BeEquivalentTo(['a', '2', 'b', '2', 'c', '3']);
+        output.Should().Be(3);
     }
 }
 
-public class LeetCode334
+public class LeetCode443
 {
-    public bool IncreasingTriplet(int[] nums)
+    public int Compress(char[] chars)
     {
-        var firstMin = nums[0];
-        var secondMin = int.MaxValue;
-
-        for (var i = 1; i < nums.Length; i++)
+        if (chars.Length == 1)
         {
-            if (nums[i] < firstMin)
+            return 1;
+        }
+
+        var consecutiveCount = 1;
+        var write = 0;
+        for (var i = 1; i < chars.Length; i++)
+        {
+            var previous = chars[i - 1];
+            var current = chars[i];
+
+            if (current != previous)
             {
-                firstMin = nums[i];
-            }
-            else if (nums[i] > firstMin)
-            {
-                if (nums[i] < secondMin)
+                chars[write] = previous;
+                write++;
+                if (consecutiveCount != 1)
                 {
-                    secondMin = nums[i];
+                    var s = consecutiveCount.ToString();
+                    for (var j = 0; j < s.Length; j++)
+                    {
+                        chars[write + j] = s[j];
+                    }
+
+                    write += s.Length;
                 }
-                else if (nums[i] > secondMin)
+
+                consecutiveCount = 1;
+            }
+            else
+            {
+                consecutiveCount++;
+            }
+
+            if (i == chars.Length - 1)
+            {
+                chars[write] = current;
+                if (consecutiveCount != 1)
                 {
-                    return true;
+                    write++;
+                    var s = consecutiveCount.ToString();
+                    for (var j = 0; j < s.Length; j++)
+                    {
+                        chars[write + j] = s[j];
+                    }
+
+                    write += s.Length - 1;
                 }
             }
         }
 
-        return false;
+
+        return write + 1;
     }
 }
