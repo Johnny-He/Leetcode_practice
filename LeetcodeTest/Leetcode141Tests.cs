@@ -31,7 +31,7 @@ namespace LeetCodeTest
         }
     }
 
-    public class LeetCode141
+    public partial class LeetCode141
     {
         public bool HasCycle(ListNode head)
         {

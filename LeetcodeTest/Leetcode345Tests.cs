@@ -1,116 +1,92 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCodeTest;
 
 [TestFixture]
-public class LeetCode605Tests
+public class LeetCode345Tests
 {
     [Test]
-    public void can_place_flowers()
+    public void ReverseVowels()
     {
-        var leetCode605 = new LeetCode605();
-        var canPlaceFlowers = leetCode605.CanPlaceFlowers2([0,0,1,0,1], 1);
-        // var canPlaceFlowers = leetCode605.CanPlaceFlowers([0, 0, 1, 0, 1], 1);
-        canPlaceFlowers.Should().BeTrue();
+        var actual = LeetCode345.ReverseVowels2("IceCreAm");
+
+        actual.Should().BeEquivalentTo("AceCreIm");
     }
 }
 
-public class LeetCode605
+public class LeetCode345
 {
-    public bool CanPlaceFlowers(int[] flowerbed, int n)
+    public static string ReverseVowels2(string s)
     {
-        var maxCanPlaceFlowers = 0;
-        var temp = 0;
-        var tempArray1 = new int[flowerbed.Length + 1];
-        if (flowerbed[0] == 0)
+        var vowelsList = new List<char>()
         {
-            tempArray1[0] = 0;
-            for (var i = 1; i < tempArray1.Length; i++)
-            {
-                tempArray1[i] = flowerbed[i - 1];
-            }
-        }
-        else
-        {
-            tempArray1 = flowerbed;
-        }
+            'a', 'e', 'i', 'o', 'u',
+            'A', 'E', 'I', 'O', 'U'
+        };
+        var input = s.ToList();
 
-        var tempArray2 = new int[tempArray1.Length + 1];
-        if (tempArray1[tempArray1.Length - 1] == 0)
+        var i = 0;
+        var j = s.Length - 1;
+        while (i < j)
         {
-            tempArray2[tempArray2.Length - 1] = 0;
-            for (var i = 0; i < tempArray2.Length - 1; i++)
+            if (vowelsList.Contains(input[i]) && vowelsList.Contains(input[j]))
             {
-                tempArray2[i] = tempArray1[i];
+                (input[i], input[j]) = (input[j], input[i]);
+                i++;
+                j--;
             }
-        }
-        else
-        {
-            tempArray2 = tempArray1;
-        }
-
-        for (var i = 0; i < tempArray2.Length; i++)
-        {
-            if (tempArray2[i] == 0)
+            else if (vowelsList.Contains(input[i]))
             {
-                temp++;
+                j--;
+            }
+            else if (vowelsList.Contains(input[j]))
+            {
+                i++;
             }
             else
             {
-                if (temp >= 3)
-                {
-                    maxCanPlaceFlowers += (temp - 1) / 2;
-                }
-
-                temp = 0;
+                i++;
+                j--;
             }
         }
 
-        if (temp >= 3)
-        {
-            maxCanPlaceFlowers += (temp - 1) / 2;
-        }
-
-        return maxCanPlaceFlowers >= n;
+        return new string(input.ToArray());
     }
 
-    public bool CanPlaceFlowers2(int[] flowerbed, int n)
+    public string ReverseVowels(string s)
     {
-        var maxCanPlaceFlowers = 0;
-        var temp = 0;
-        if (flowerbed.Length == 1 && flowerbed[0] == 0)
+        var vowelsList = new List<char>()
         {
-            return n <= 1;
-        }
-        
-        for (var i = 0; i < flowerbed.Length; i++)
+            'a', 'e', 'i', 'o', 'u',
+            'A', 'E', 'I', 'O', 'U'
+        };
+        var tempList = new List<char>();
+        for (var i = 0; i < s.Length; i++)
         {
-            if (flowerbed[i] == 0)
+            if (vowelsList.Contains(s[i]))
             {
-                temp++;
-                if(i == 0 || i == flowerbed.Length-1)
-                {
-                    temp++;
-                }
+                tempList.Add(s[i]);
+            }
+        }
+
+        var builder = new StringBuilder();
+        for (int i = 0, j = tempList.Count - 1; i < s.Length; i++)
+        {
+            if (vowelsList.Contains(s[i]))
+            {
+                builder.Append(tempList[j]);
+                j--;
             }
             else
             {
-                if (temp >= 3)
-                {
-                    maxCanPlaceFlowers += (temp - 1) / 2;
-                }
-
-                temp = 0;
+                builder.Append(s[i]);
             }
         }
 
-        if (temp >= 3)
-        {
-            maxCanPlaceFlowers += (temp - 1) / 2;
-        }
-
-        return maxCanPlaceFlowers >= n;
+        return builder.ToString();
     }
 }

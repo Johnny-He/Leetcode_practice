@@ -1,78 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using FluentAssertions;
-using Newtonsoft.Json;
-using NSubstitute;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 using NUnit.Framework;
 
-namespace LeetCodeTest
+namespace LeetCodeTest;
+
+[TestFixture]
+public class LeetCode1768Tests
 {
-    [TestFixture]
-    public class LeetCode141Test
+    [TestCase("abc", "pqr", "apbqcr")]
+    [TestCase("ab", "pqrs", "apbqrs")]
+    [TestCase("abcd", "pq", "apbqcd")]
+    public void MergeTwoString(string word1, string word2, string output)
     {
-        [Test]
-        public void test()
-        {
-            var listNode = new ListNode()
-            {
-                val = 123
-            };
-            var temp = listNode;
-            var temp2 = listNode;
-
-            temp2.val = 999;
-            var listNodeB = new ListNode();
-            Console.WriteLine(JsonConvert.SerializeObject(temp));
-            Console.WriteLine(JsonConvert.SerializeObject(temp2));
-            // var @equals = listNode.Equals(listNode);
-            // @equals.Should().Be(true);
-            //[5,3,6,2,4,null,null,1]
-        }
+        var mergeTwoString = LeetCode1768.MergeTwoString(word1, word2);
+        mergeTwoString.Should().BeEquivalentTo(output);
     }
+}
 
-    public class LeetCode141
+public static class LeetCode1768
+{
+    public static string MergeTwoString(string word1, string word2)
     {
-        public bool HasCycle(ListNode head)
+        var output = string.Empty;
+
+        var max = Math.Max(word1.Length, word2.Length);
+        for (var i = 0; i < max; i++)
         {
-            if (head == null)
+            if (i < word1.Length)
             {
-                return false;
-            }
-            var listNodesRecord = new HashSet<ListNode>();
-            while (head.next != null)
-            {
-                if (listNodesRecord.Contains(head))
-                {
-                    return true;
-                }
-                listNodesRecord.Add(head);
-                head = head.next;
+                output += word1[i];
             }
 
-            return false;
+            if (i < word2.Length)
+            {
+                output += word2[i];
+            }
         }
-        public bool HasCycle2(ListNode head)
-        {
-            if (head == null)
-            {
-                return false;
-            }
 
-            var listNodeRunWithOneStep = head;
-            var listNodeRunWithTwoStep = head;
-            while (listNodeRunWithOneStep.next != null && listNodeRunWithTwoStep.next != null && listNodeRunWithTwoStep.next.next != null)
-            {
-
-                listNodeRunWithOneStep = listNodeRunWithOneStep.next;
-                listNodeRunWithTwoStep = listNodeRunWithTwoStep.next.next;
-                if (listNodeRunWithOneStep.Equals(listNodeRunWithTwoStep))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
+        return output;
     }
 }

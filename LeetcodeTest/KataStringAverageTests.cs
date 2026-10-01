@@ -26,7 +26,7 @@ namespace LeetCodeTest
         public void test1(string input, string expected)
         {
             var averageString = new StringAverage().AverageString(input);
-            Assert.AreEqual(averageString, expected);
+            Assert.That(averageString, Is.EqualTo(expected));
         }
     }
 

@@ -1,98 +1,48 @@
-﻿using System.Collections;
-using System.Linq;
-using System.Runtime.CompilerServices;
+﻿using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCodeTest;
 
 [TestFixture]
-public class LeetCode238Test
+public class LeetCode334Test
 {
     [Test]
     public void Test()
     {
-        var leetCode105 = new LeetCode238();
-
-        var productExceptSelf = leetCode105.ProductExceptSelf([1, 2, 3, 4]);
-        productExceptSelf.Should().BeEquivalentTo([24, 12, 8, 6]);
+        var leetCode105 = new LeetCode334();
+        var increasingTriplet = leetCode105.IncreasingTriplet([1, 2, 3, 4, 5]);
+        increasingTriplet.Should().BeTrue();
     }
 }
 
-public class LeetCode238
+public class LeetCode334
 {
-    public int[] ProductExceptSelf(int[] nums)
+    public bool IncreasingTriplet(int[] nums)
     {
-        var lastNumber = 1;
-        var outputs = new int[nums.Length];
-        for (var i = nums.Length - 1; i >= 0; i--)
+        var firstMin = nums[0];
+        var secondMin = int.MaxValue;
+
+        for (var i = 1; i < nums.Length; i++)
         {
-            outputs[i] = lastNumber * nums[i];
-            lastNumber = outputs[i];
-        }
-
-        lastNumber = 1;
-        for (var i = 0; i < nums.Length; i++)
-        {
-            if (i == 0)
+            if (nums[i] < firstMin)
             {
-                outputs[i] = outputs[i + 1];
+                firstMin = nums[i];
             }
-            else if (i == nums.Length - 1)
+            else if (nums[i] > firstMin)
             {
-                outputs[i] = lastNumber;
-            }
-            else
-            {
-                outputs[i] = lastNumber * outputs[i + 1];
-            }
-
-            lastNumber *= nums[i];
-        }
-
-        return outputs;
-    }
-
-    public int[] ProductExceptSelf2(int[] nums)
-    {
-        var leftProducts = new int[nums.Length];
-        var lastNumber = 1;
-        for (var i = 0; i < nums.Length; i++)
-        {
-            leftProducts[i] = lastNumber * nums[i];
-            lastNumber = leftProducts[i];
-        }
-
-        var rightProduct = new int[nums.Length];
-        lastNumber = 1;
-        for (var i = nums.Length - 1; i >= 0; i--)
-        {
-            rightProduct[i] = lastNumber * nums[i];
-            lastNumber = rightProduct[i];
-        }
-
-        var outputs = new int[nums.Length];
-        //1,2,3,4
-        //24,12,8,6
-
-        //left:  1,2,6,24
-        //right: 24,24,12,4
-        for (var i = 0; i < nums.Length; i++)
-        {
-            if (i == 0)
-            {
-                outputs[i] = rightProduct[i + 1];
-            }
-            else if (i == nums.Length - 1)
-            {
-                outputs[i] = leftProducts[i - 1];
-            }
-            else
-            {
-                outputs[i] = leftProducts[i - 1] * rightProduct[i + 1];
+                if (nums[i] < secondMin)
+                {
+                    secondMin = nums[i];
+                }
+                else if (nums[i] > secondMin)
+                {
+                    return true;
+                }
             }
         }
 
-        return outputs;
+        return false;
     }
 }

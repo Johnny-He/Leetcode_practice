@@ -16,7 +16,7 @@ namespace LeetCodeTest
             var sum = 9;
             var actual = _leetcode1.TwoSum(new List<int>() { 2, 7, 11, 15 }.ToArray(), sum);
             var expected = new List<int>() { 0, 1 };
-            Assert.AreEqual(expected,actual);
+            Assert.That(actual, Is.EqualTo(expected));
             Assert.Pass();
         }
     }
